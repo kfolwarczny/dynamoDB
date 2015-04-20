@@ -4,15 +4,19 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+import org.springframework.data.annotation.Id;
 
 @DynamoDBTable(tableName = "Car")
 public class Car {
 
+    @Id
+    @DynamoDBHashKey(attributeName = "name")
     private String name;
+    @DynamoDBRangeKey(attributeName = "type")
     private String type;
+    @DynamoDBAttribute(attributeName = "production_date")
     private String production_date;
 
-    @DynamoDBHashKey
     public String getName() {
         return name;
     }
@@ -21,7 +25,6 @@ public class Car {
         this.name = name;
     }
 
-    @DynamoDBRangeKey
     public String getType() {
         return type;
     }
@@ -30,7 +33,6 @@ public class Car {
         this.type = type;
     }
 
-    @DynamoDBAttribute
     public String getProduction_date() {
         return production_date;
     }
