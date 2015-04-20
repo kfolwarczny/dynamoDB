@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = "pl.obj.dynamodb")
 public class App {
 
+
     public static void main(String[] args) {
         SpringApplication.run(App.class, args);
     }

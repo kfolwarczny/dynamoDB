@@ -19,6 +19,7 @@ public class DynamoDBConfig {
     @Autowired
     AwsProperties awsProperties;
 
+
     @Bean
     public AmazonDynamoDB amazonDynamoDB() {
         AmazonDynamoDB amazonDynamoDB = new AmazonDynamoDBClient(amazonAWSCredentials());
