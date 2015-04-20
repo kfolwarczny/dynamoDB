@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "aws")
 public class AwsProperties {
 
-
     private String url;
     private String accessKey;
     private String secretKey;
